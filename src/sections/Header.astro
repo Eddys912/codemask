@@ -1,0 +1,26 @@
+---
+import Container from '@components/Container.astro';
+import GithubIcon from '@icons/Github.svelte';
+---
+
+<header class="sticky top-0 z-10 border-b border-edge backdrop-blur-md">
+  <Container class="flex items-center justify-between">
+    <a
+      href="/"
+      class="font-mono text-2xl font-bold whitespace-nowrap text-white uppercase"
+      aria-label="Go to home">
+      <h1>
+        Code<span class="text-brand">Mask</span>
+      </h1>
+    </a>
+
+    <a
+      class="text-white"
+      href="https://github.com/edavnix/codemask.git"
+      aria-label="View project on GitHub"
+      target="_blank"
+      rel="noopener noreferrer">
+      <GithubIcon class="size-6" aria-hidden="true" />
+    </a>
+  </Container>
+</header>

@@ -1,0 +1,29 @@
+---
+import Container from '@components/Container.astro';
+---
+
+<footer class="border-t border-edge bg-void">
+  <Container class="flex flex-col gap-4 lg:gap-1">
+    <div class="flex items-center justify-between">
+      <a
+        href="/"
+        class="font-mono font-semibold whitespace-nowrap text-white uppercase"
+        aria-label="Go to home">
+        Code<span class="text-brand">Mask</span>
+      </a>
+
+      <a
+        href="https://github.com/edavnix/codemask.git"
+        class="font-mono font-semibold text-white uppercase transition-colors hover:text-brand"
+        aria-label="View project on GitHub"
+        target="_blank"
+        rel="noopener noreferrer">
+        GitHub
+      </a>
+    </div>
+
+    <span class="text-center text-xs whitespace-nowrap text-muted">
+      Copyright © 2026 Codemask.
+    </span>
+  </Container>
+</footer>
