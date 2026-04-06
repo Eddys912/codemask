@@ -1,0 +1,66 @@
+---
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource-variable/jetbrains-mono/wght.css';
+import '@src/global.css';
+
+import Footer from '@sections/Footer.astro';
+import Header from '@sections/Header.astro';
+
+import {
+  SITE_AUTHOR,
+  SITE_DESC,
+  SITE_KEYWORDS,
+  SITE_LOCALE,
+  SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_THEME_COLOR,
+  SITE_TITLE,
+  SITE_URL,
+} from 'astro:env/server';
+
+const canonicalURL = SITE_URL ? new URL(Astro.url.pathname, SITE_URL).href : Astro.url.href;
+const imageURL = new URL(SITE_OG_IMAGE, SITE_URL ?? Astro.url.origin).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{SITE_TITLE}</title>
+    <meta name="description" content={SITE_DESC} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content={SITE_KEYWORDS} />
+    <meta name="author" content={SITE_AUTHOR} />
+    <meta name="theme-color" content={SITE_THEME_COLOR} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:title" content={SITE_TITLE} />
+    <meta property="og:description" content={SITE_DESC} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content={SITE_LOCALE} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={SITE_TITLE} />
+    <meta name="twitter:description" content={SITE_DESC} />
+    <meta name="twitter:image" content={imageURL} />
+  </head>
+  <body>
+    <div class="flex min-h-dvh flex-col lg:h-dvh">
+      <Header />
+      <main class="flex-1 overflow-y-auto lg:overflow-hidden">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
