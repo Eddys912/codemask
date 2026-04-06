@@ -1,0 +1,31 @@
+# Gitattributes for codemask
+# Documentation: https://git-scm.com/docs/gitattributes
+
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Project files
+*.md      text eol=lf
+*.json    text eol=lf
+*.yaml    text eol=lf
+*.astro   text eol=lf
+*.svelte  text eol=lf
+*.ts      text eol=lf
+*.mjs     text eol=lf
+*.js      text eol=lf
+*.css     text eol=lf
+*.svg     text eol=lf
+
+# Configuration
+.editorconfig   text eol=lf
+.gitattributes  text eol=lf
+.gitignore      text eol=lf
+.prettierignore text eol=lf
+.prettierrc     text eol=lf
+
+# Binary: do not modify
+*.png   binary
+*.webp  binary
+*.ico   binary
+*.ttf   binary
+*.woff2 binary
